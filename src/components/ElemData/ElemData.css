@@ -1,0 +1,59 @@
+@font-face {
+	font-family: "Rubik";
+	src:  url('../../style/fonts/Rubik-Medium.ttf');
+	src:  url('../../style/fonts/Rubik-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Rubik";
+	src:  url('../../style/fonts/Rubik-Bold.ttf');
+	src:  url('../../style/fonts/Rubik-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: bold;
+}
+
+.list-elem {
+	height: 12vh;
+	flex-grow:1;
+	padding-left: 10px;
+}
+
+.list-elem:not(:last-child) {
+	padding-right: 30px;
+	border-right: 1px solid rgb(150, 150, 150);
+}
+
+.elem-header {
+	color: hsl(0, 0%, 59%);
+	font-family: "Rubik", Calibri, Tahoma, sans-serif;
+	font-weight: 500;
+}
+
+.elem-content {
+	margin: 0;
+	font-family: "Rubik", Calibri, Tahoma, sans-serif;
+	font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+	.list-elem {
+		height: 5vh;
+		padding-left: 0;
+	}
+
+	.list-elem:not(:last-child) {
+		padding-right: 0;
+		border-right: none;
+	}
+
+	.list-elem:last-child {
+		padding-bottom: 20px;
+	}
+
+	.elem-header {
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+}

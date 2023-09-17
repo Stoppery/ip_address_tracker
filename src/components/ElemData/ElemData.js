@@ -1,10 +1,12 @@
+import './ElemData.css';
+
 function ElemData({headerElem, dataApiParam}) {
 
 
 	return (
-		<li>
-			<h3>{headerElem}</h3>
-			<p>{dataApiParam}</p>
+		<li className="list-elem">
+			<h3 className="elem-header">{headerElem}</h3>
+			<p className="elem-content">{dataApiParam}</p>
 		</li>
 	)
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import Tittle from './components/Tittle/Tittle';
 import Form from './components/Form/Form';
 import ListData from './components/ListData/ListData';
 import Map from './components/Map/Map';
@@ -15,9 +16,7 @@ function App() {
     location: {
       city: '',
       postalCode: '',
-      timezone: '',
-      lat: 55.751244,
-      lng: 37.618423
+      timezone: ''
     },
     isp: ''
   });
@@ -31,10 +30,13 @@ function App() {
   }, [dataApi]);
 
   return (
-    <div>
-      <Form formDataToParent={formDataToParent}/>
+    <div className='react-container'>
+      <div className='hader-tittle-form'>
+        <Tittle />
+        <Form formDataToParent={formDataToParent}/>
+      </div>
       <ListData dataApi={dataApi}/>
-      <Map lat={dataApi.location.lat} long={dataApi.location.lng}/>
+      <Map dataApi={dataApi}/>
     </div>
   );
 }

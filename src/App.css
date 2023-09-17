@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Rubik";
+  src:  url('style/fonts/Rubik-Regular.ttf');
+  src:  url('style/fonts/Rubik-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Rubik";
+  src:  url('style/fonts/Rubik-Medium.ttf');
+  src:  url('style/fonts/Rubik-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.react-container {
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hader-tittle-form{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  justify-content: center;;
+  background: url("style/img/pattern-bg-desktop.png") no-repeat;
+  background-size:cover;
 }
