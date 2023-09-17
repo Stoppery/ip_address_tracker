@@ -47,7 +47,7 @@ Users should be able to:
 - Flexbox
 - [React](https://reactjs.org/) - JS library
 - [Map library](https://leafletjs.com) - For map generating
-- [IP API](https://geo.ipify.org/) - IP addres API
+- [IP API](https://geo.ipify.org/) - IP address API
 
 ### What I learned
 
