@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Form.css';
+import arrow from '../../style/img/icon-arrow.svg';
 
 
 
@@ -8,7 +9,8 @@ function Form({formDataToParent}) {
 
 	const [ipData, setIpData] = useState('');
 
-	async function sendData() {
+	async function sendData(event) {
+		event.preventDefault();
 		const API_KEY = process.env.REACT_APP_API_KEY;
 		const link = 'https://geo.ipify.org/api/v2/country,city?apiKey=' + API_KEY;
 		let ipAdress = '&ipAddress=' + ipData;
@@ -21,14 +23,16 @@ function Form({formDataToParent}) {
 	}
 
 	return (
-		<div>
+		<form className='react-form' onSubmit={sendData}>
 			<input 
 				className='input-ip' 
 				placeholder='Search for any IP adress or domain' 
 				value={ipData} 
 				onChange={e => setIpData(e.target.value)}/>
-			<button onClick={sendData}> > </button>
-		</div>
+			<button className="form-button" type="submit"> 
+				<img src={arrow} alt="Submit solution"/>
+			</button>
+		</form>
 	);
 }
 

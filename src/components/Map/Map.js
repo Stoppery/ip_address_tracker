@@ -1,49 +1,43 @@
+import {React, useEffect} from 'react'
+import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
 import L from 'leaflet';
 
+import customIcon from '../../style/img/icon-location.svg';
 
-import React, {useEffect, useState} from 'react';
 
-function Map({lat, long}) {
-    const [map, setMap] = useState();
-    
+const myIcon = L.icon({
+    iconUrl: customIcon,
+    iconSize: [46, 56]
+});
 
+const RecenterAutomatically = ({lat,lng}) => {
+    const map = useMap();
     useEffect(() => {
-        setMap(L.map('map', {                                               //must be an ID of an element
-            center: [lat, long],
-            zoom: 13
-        }));
-    },[])
+        map.setView([lat, lng]);
+        map.attributionControl.setPrefix(false);
+        map.removeControl(map.zoomControl);
+    }, [lat, lng, map]);
+    return null;
+}
 
-    /*specifying a tile layer, track resize and a marker to the map */
-    useEffect(() => {
-        if(!map) return;
+function Map({dataApi}) {
+    const [lat, long] = [dataApi.location.lat || 38.736946 ,dataApi.location.lng || -9.142685];
 
-        L.tileLayer(                                                          //adding a tile layer to the map to give it a specific look
-            'https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
-			{maxZoom: 19}
-        ).addTo(map);
-        map.trackResize = true;                                              //track size will update the map everytime the viewport is resized
-        L.marker([lat, long]).addTo(map);                                    // adding a marker to the map
-
-        return () => {                                                        //clean up
-            map.off();
-            map.remove();
-        }
-    }, [map])
-
-
-    // /* this will check to see if the map's size has changed and will update it accordingly*/
-    // useEffect(() => {
-    //     if(!map) return;
-
-    //     setTimeout(() => {
-    //         map.invalidateSize(true)                                         //this is mostly useful for updating the map when we enter the page in tablet mode or mobile
-    //     }, 200)
-    // })
 
     return(
-            <div id={'map'}></div>                                          //the actual map, remember to set the width and height of this container
-        )
+        <MapContainer style={{height: '71vh'}} center={[lat, long]} zoom={16} scrollWheelZoom={false}>
+            <TileLayer
+                attribution=''
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker 
+                icon={myIcon}
+                position={[lat, long]}
+            />
+
+            <RecenterAutomatically lat={lat} lng={long} />
+        </MapContainer>
+    )
 }
 
 export default Map;

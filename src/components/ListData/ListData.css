@@ -1,0 +1,33 @@
+.list-container {
+	top: 22vh;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 80vw;
+	position: absolute;
+	z-index: 401;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.list-data {
+	display: flex;
+	/* justify-content: space-around; */
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+	.list-data {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+@media (min-height: 500px) and (max-height: 876px) {
+	.list-container {
+		top: 30vh;
+	}
+}
