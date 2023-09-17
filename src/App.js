@@ -17,8 +17,6 @@ function App() {
       city: '',
       postalCode: '',
       timezone: ''
-      // lat: 55.751244,
-      // lng: 37.618423
     },
     isp: ''
   });
