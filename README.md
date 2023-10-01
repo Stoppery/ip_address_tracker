@@ -9,8 +9,9 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [Usage](#usage)
   - [Screenshot](#screenshot)
+  - [Installation](#installation)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -20,16 +21,21 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
 ## Overview
 
-### The challenge
+This project is a simple IP address tracker. It allows users to input an IP address and get information about the location, ISP, and more.
 
-Users should be able to:
+### Usage
 
-- See their own IP address on the map on the initial page load
-- Search for any IP addresses and see the key information and location
+Enter an IP address into the input field and press enter. The application will display information about the IP address.
 
 ### Screenshot
 
 ![](./images/solution.png)
+
+### Installation
+
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Run `npm start` to start the application
 
 ### Links
 
